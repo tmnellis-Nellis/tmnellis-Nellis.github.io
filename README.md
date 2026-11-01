@@ -1,3 +1,2 @@
 # tmnellis-Nellis.github.io
-This repository contains files for CIS300 Project
-Assignments.
+This repository contains files for CIS300 Project Assignments.
