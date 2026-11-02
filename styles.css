@@ -1,0 +1,207 @@
+/*I decided to use realtimecolors.com's Themes feature, in case I want to implement themes later.
+  I'm not sure if this is in the scope for the class, so I've commented out light mode for the time being.
+:root[data-theme="light"] {
+  --text: #41303b;
+  --background: #f8ecf4;
+  --primary: #bf3696;
+  --secondary: #dda6ca;
+  --accent: #e01aa4;
+}*/
+
+:root[data-theme="dark"] {
+  --text: #cfbec9;
+  --background: #13070f;
+  --primary: #c940a0;
+  --secondary: #592246;
+  --accent: #e51faa;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    background-color: var(--background);
+    color: var(--text);
+    /*I'm not sure whether there's any regulations on fonts, but I'm a big fan of Courier.*/
+    font-family:'Courier New', Courier, monospace;
+}
+
+#wrapper {
+    background-color: var(--secondary);
+    background-repeat: no-repeat;
+}
+
+/* Headings */
+h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    /*I've included this here in case I decide to change the main font later.*/
+    font-family:'Courier New', Courier, monospace;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+/* Anchor */
+a {
+    text-decoration: none;
+}
+
+a:link {
+    color: var(--text);
+}
+
+a:visited {
+    color: var(--text);
+}
+
+a:hover {
+    color: var(--primary);
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    text-align: center;
+}
+
+header a:hover {
+    color: var(--secondary);
+}
+
+/* Nav */
+nav {
+    padding: 0;
+    font-size: 120%;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    font-size: 1.2em;
+}
+
+nav li {
+    border-bottom: 1px solid var(--text);
+}
+
+/* Main */
+main {
+    padding: 0px 20px;
+    display: block;
+    background-color: var(--background);
+    overflow: auto;
+}
+
+.container {
+    border-bottom: 1px solid var(--text);
+}
+
+/* Footer */
+footer {
+    padding: 2em;
+    background-color: var(--background);
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+footer a:link {
+    color: var(--primary);
+}
+
+footer a:visited {
+    color: var(--primary);
+}
+
+footer a:hover {
+    color: var(--text);
+}
+
+.container, .gallery, #vidplace{
+    text-align: center;
+}
+
+.content {
+    text-align: left;
+}
+
+.gallery img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.container img{
+    max-width: 100%;
+}
+
+/* Tablet */
+@media (min-width: 600px){
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    nav li {
+        border-bottom: none;
+    }
+
+    footer ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1em;
+    }
+
+    .long {
+        padding: 20px;
+        height: 400px;
+        object-fit: cover;
+    }
+
+    /* Gallery */
+    @supports (display:flex){
+        .gallery {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+/* Computer */
+@media (min-width: 1024px){
+    #wrapper {
+        margin: auto;
+        width: 80%;
+        border: 5px solid var(--secondary);
+        /*This isn't visible on my current color scheme*/
+        box-shadow: 5px 5px #13070f;
+    }
+
+    nav {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    @supports (display:flex){
+        /*main layout*/
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0px;
+        }
+
+        .content {
+            flex: 1;
+        }
+    }
+}
